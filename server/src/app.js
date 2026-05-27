@@ -2,8 +2,7 @@ const express = require('express')
 const cors = require('cors')
 
 const app = express()
-const testRoutes = require('./routes/test.routes')
-
+const notificationRoutes = require('./routes/notification.routes')
 
 app.use(express.json())
 
@@ -14,7 +13,6 @@ app.use((req, res, next) => {
     next()
 })
 
-
-app.use('/api', testRoutes)
+app.use('/api/notifications',notificationRoutes)
 
 module.exports = app
