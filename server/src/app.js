@@ -3,6 +3,7 @@ const cors = require('cors')
 
 const app = express()
 const notificationRoutes = require('./routes/notification.routes')
+const alertRuleRoutes = require('./routes/alertRule.routes')
 
 app.use(express.json())
 
@@ -14,5 +15,6 @@ app.use((req, res, next) => {
 })
 
 app.use('/api/notifications',notificationRoutes)
+app.use('/api/rules',alertRuleRoutes)
 
 module.exports = app
